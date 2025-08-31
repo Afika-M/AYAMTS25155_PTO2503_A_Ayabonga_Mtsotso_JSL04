@@ -1,4 +1,5 @@
-const initialTasks = [{
+const initialTasks = [
+  {
     id: 1,
     title: "Launch Epic Career 🚀",
     description: "Create a killer Resume",
@@ -19,19 +20,22 @@ const initialTasks = [{
   {
     id: 11,
     title: "Learn Data Structures and Algorithms 📚",
-    description: "Study fundamental data structures and algorithms to solve coding problems efficiently",
+    description:
+      "Study fundamental data structures and algorithms to solve coding problems efficiently",
     status: "todo",
   },
   {
     id: 12,
     title: "Contribute to Open Source Projects 🌐",
-    description: "Gain practical experience and collaborate with others in the software development community",
+    description:
+      "Gain practical experience and collaborate with others in the software development community",
     status: "done",
   },
   {
     id: 13,
     title: "Build Portfolio Projects 🛠️",
-    description: "Create a portfolio showcasing your skills and projects to potential employers",
+    description:
+      "Create a portfolio showcasing your skills and projects to potential employers",
     status: "done",
   },
 ];
@@ -42,35 +46,33 @@ const modalTitleInput = document.getElementById("modal-task-title");
 const modalDescInput = document.getElementById("modal-task-desc");
 const modalStatusSelect = document.getElementById("modal-task-status");
 
+/* functon to create a task element in the DOM*/
+function createTaskElement(task) {
+  const taskDiv = document.createElement("div");
+  taskDiv.classList.add("task-div");
 
-/* Adding tasks */
+  const titleEl = document.createElement("h4");
+  titleEl.textContent = task.title;
+
+  const descEl = document.createElement("p");
+
+  taskDiv.append(titleEl, descEl);
+
+  // add click event to open modal with task details
+  taskDiv.addEventListener("click", () => openModal(task));
+
+  return taskDiv;
+}
+// function to render tasks in their respective columns
 function addTask(initialTasks) {
   initialTasks.forEach((task) => {
-    const taskDiv = document.createElement("div");
-    taskDiv.classList.add("task-div");
-    const titleEl = document.createElement("h4");
-    titleEl.textContent = task.title;
-
-    const descEl = document.createElement("p");
-
-
-    taskDiv.append(titleEl);
-    taskDiv.append(descEl);
-
-    // Add click event to view task details
-    taskDiv.addEventListener('click', () => openModal(task));
+    const taskElement = createTaskElement(task);
 
     // Append to the correct column based on status
     const columnContainer = document.querySelector(
       `[data-status="${task.status}"] .tasks-container`
     );
-
-    if (columnContainer !== null) {
-      columnContainer.append(taskDiv);
-    } else {
-      console.log(`No column found for status: ${task.status}`);
-    }
-
+    columnContainer.append(taskElement);
   });
 }
 // Function to open modal with task details
