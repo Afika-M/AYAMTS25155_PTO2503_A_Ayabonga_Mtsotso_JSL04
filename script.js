@@ -35,20 +35,30 @@ const initialTasks = [{
     status: "done",
   },
 ];
+// adding DOM elements
+const modal = document.getElementById("task-modal");
+const closeModalBtn = document.getElementById("close-modal");
+const modalTitleInput = document.getElementById("modal-task-title");
+const modalDescInput = document.getElementById("modal-task-desc");
+const modalStatusSelect = document.getElementById("modal-task-status");
+
 
 /* Adding tasks */
-
-function addTask(tasks) {
-  tasks.forEach((task) => {
+function addTask(initialTasks) {
+  initialTasks.forEach((task) => {
     const taskDiv = document.createElement("div");
     taskDiv.classList.add("task-div");
     const titleEl = document.createElement("h4");
     titleEl.textContent = task.title;
 
     const descEl = document.createElement("p");
-    descEl.textContent = task.description;
+
+
     taskDiv.append(titleEl);
     taskDiv.append(descEl);
+
+    // Add click event to view task details
+    taskDiv.addEventListener('click', () => openModal(task));
 
     // Append to the correct column based on status
     const columnContainer = document.querySelector(
@@ -60,6 +70,22 @@ function addTask(tasks) {
     } else {
       console.log(`No column found for status: ${task.status}`);
     }
+
   });
 }
+// Function to open modal with task details
+function openModal(task) {
+  modalTitleInput.value = task.title;
+  modalDescInput.value = task.description;
+  modalStatusSelect.value = task.status;
+  modal.style.display = "flex";
+  modalDescInput.style.fontFamily = "inherit";
+}
+// Function to close modal
+function closeModal() {
+  modal.style.display = "none";
+}
+// Close modal when clicking the close button
+closeModalBtn.addEventListener("click", () => closeModal());
+
 addTask(initialTasks);

@@ -116,10 +116,7 @@ header {
 }
 .card-column-main {
   display: grid;
-  grid-template-columns: repeat(
-    3,
-    minmax(0, 304px)
-  ); /* 3 columns with min size */
+  grid-template-columns: repeat(3,minmax(0, 304px)); /* 3 columns with min size */
   gap: 8px; /* Space between columns */
 }
 .column-div {
@@ -189,7 +186,7 @@ h2 {
    Modal background
  ======================*/
 .modal {
-  display: flex;
+  display: none;
   position: fixed;
   left: 0;
   top: 0;
@@ -199,6 +196,7 @@ h2 {
   justify-content: center;
   align-items: center;
 }
+
 /* Modal content */
 .modal-content {
   background-color: white;
