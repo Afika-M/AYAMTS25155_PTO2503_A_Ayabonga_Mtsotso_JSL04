@@ -1,40 +1,60 @@
-# JSL04 Project Brief: Dynamic Task Display & Modal View
+# Dynamic Kanban Task Board
 
-## Overview
+A dynamic task management system built using HTML, CSS, and JavaScript. Tasks are displayed on a **Kanban-style board** with three columns: **To Do**, **Doing**, and **Done**. Users can click a task to view and edit its details in a **modal**, following a clean, modular JavaScript structure.
 
-In this project, you will dynamically display tasks from the **given initial data** on the DOM using JavaScript. Tasks should be placed into the correct **Kanban board columns** based on their status, and clicking a task should open a **modal** where users can view and modify task details. The project emphasizes **DOM manipulation, event handling, modular JavaScript structure, and responsive UI implementation.**
+## 🚀 Features
 
-## Before You Begin
+#### Dynamic Task Display
+- Generate task elements dynamically from initial data.
+- Place tasks into correct Kanban columns (`To Do`, `In Progress`, `Done`) based on status.
+- Modular JavaScript functions for creating tasks, rendering tasks, and handling events.
 
-**Check the project user stories in your student dashboard and the updated Figma Design** before you start building.
+#### Modal Interaction
+- Click a task to open a modal displaying its title, description, and status.
+- Editable inputs for task title and description.
+- Status dropdown to change the task's current status.
+- Close button to exit the modal.
+- Responsive modal with backdrop effect for focus.
 
-## Figma Design Link
+## 🛠️ Technologies Used
 
-Check the updated Figma Design: [Figma Link](https://www.figma.com/design/y7bFCUYL5ZHfPeojACBXg2/Challenges-%7C-JSL?node-id=0-1&p=f&t=Ki0CZk0RAjrk9Fhs-0)
+- HTML5  
+- CSS3 (Flexbox/Grid for layout, responsive design)  
+- JavaScript (DOM manipulation, event handling) 
 
-## Key Objectives
+## 📁 Folder Structure
 
-### Dynamic Task Display & Interaction
+project-root/
+├── index.html       # Main HTML file  
+├── styles.css       # Styling for the board and modal  
+├── script.js        # JavaScript logic for tasks and modal  
+├── assets/          # Logos, icons, and favicons  
+├── images/          # Screenshots for documentation  
+└── README.md        # Project documentation  
 
-- Dynamically generate **task elements** from the given initial data and insert them into the DOM.
-- Ensure tasks are placed in the **correct columns** ("To Do", "In Progress", "Done") based on their status.
-- Clicking a task should **open a modal** displaying its details.
-- The modal should include:
-  - **Editable input fields** for the task title and description.
-  - **A select dropdown** showing the current status with other status options available.
-  - **A close button** that allows users to exit the modal easily.
 
-### Design & Responsiveness
+## Figma Design
 
-- Ensure the **modal matches the Figma design**, including a **backdrop effect** for focus.
-- Implement a **fully responsive modal** that works on both desktop and mobile devices.
+Check the updated Figma design for reference: [Figma Link](https://www.figma.com/design/y7bFCUYL5ZHfPeojACBXg2/Challenges-%7C-JSL?node-id=6033-10647&t=sFVwb6fEmRK8u8El-0)
 
-### Code Structure & Maintainability
 
-- Structure JavaScript using **modular, single-responsibility functions**.
-- Use **descriptive and meaningful variable and function names** for clarity.
-- Add **JSDoc comments** to major functions, describing their purpose, parameters, and return values for better documentation.
+## 🧪 How to Run
 
-## Expected Outcome
+1. Clone or download the repository.
+2. Open `index.html` in your browser.
+3. The task board will render dynamically from the initial task data.
+4. Click any task to open the modal and edit details.
+5. Check browser Developer Tools → Console for debugging
 
-A fully functional **dynamic task board** where tasks appear under the correct columns, and users can **open a modal to view/edit** task details. The project will follow **clean, well-documented, and maintainable code practices**, ensuring a professional and scalable implementation.
+## 📸 Screenshots
+###### Example of modal view on a desktop
+![Modal example](./images/modalDesktop.jpeg)
+
+###### Example of modal view on a 
+![Modal example](./images/modalMobile.jpeg)
+
+## 🧑‍💻 Author
+
+Created by _Ayabonga Mtsotso_
+
+---
